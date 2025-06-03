@@ -11,7 +11,7 @@ public class FactoryMenuItem {
             case "dessert": 
             	return new Dessert(id,nom,desc,prix);
             default: 
-            	throw new IllegalArgumentException("Type inconnu");
+            	throw new IllegalArgumentException("Type de menu inconnu");
         }
     }
 }
