@@ -12,13 +12,13 @@ public class Facture {
     }
 
     public void generer() {
-        System.out.println("--- Facture #" + commandeId + " ---");
+        System.out.println("--- Facture " + commandeId + " ---");
         System.out.println("Total à payer : " + montantTotal + "€");
     }
 
     public void enregistrerPaiement() {
         this.payee = true;
-        System.out.println("Paiement enregistré pour la commande #" + commandeId);
+        System.out.println("Paiement enregistré pour la commande :" + commandeId);
     }
     
     public boolean isPayee() { 

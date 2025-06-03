@@ -44,7 +44,6 @@ public class CommandeDAO implements GenericDAO<Commande, Integer> {
                 if (rs.next()) {
                     Commande cmd = new Commande(rs.getInt("id"));
                     cmd.setDate(new java.util.Date(rs.getTimestamp("date_commande").getTime()));
-                    // Reconstruction du contenu et de l'état si besoin
                     return cmd;
                 }
             }

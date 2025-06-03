@@ -5,6 +5,6 @@ public class EtatPrete implements EtatCommande {
     @Override
     public void changerEtat(Commande commande) {
         commande.setEtat(new EtatLivree());
-        System.out.println("Commande #" + commande.getId() + " passée à l'état 'Livrée'.");
+        System.out.println("Commande :" + commande.getId() + " passée à l'état 'Livrée'.");
     }
 }

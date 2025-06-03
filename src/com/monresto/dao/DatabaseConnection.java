@@ -8,17 +8,16 @@ public class DatabaseConnection {
     private static DatabaseConnection instance;
     private Connection connection;
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/monresto";
+    private static final String URL = "jdbc:postgresql://localhost:5432/restaurant";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "laeticia";
+    private static final String PASSWORD = "youmy611";
 
     private DatabaseConnection() throws SQLException {
         try {
             Class.forName("org.postgresql.Driver"); // Charge le driver PostgreSQL
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException e) {
-            System.err.println("Erreur : Driver PostgreSQL non trouvé.");
-            e.printStackTrace();
+            throw new SQLException("Driver PostgreSQL introuvable", e);
         }
     }
 

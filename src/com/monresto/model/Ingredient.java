@@ -18,10 +18,18 @@ public class Ingredient implements Subject {
         this.observers = new ArrayList<>();
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public String getNom() { return nom; }
-    public int getQuantiteStock() { return quantiteStock; }
+    public int getId() { 
+    	return id; 
+    }
+    public void setId(int id) {
+    	this.id = id; 
+    }
+    public String getNom() { 
+    	return nom; 
+    }
+    public int getQuantiteStock() { 
+    	return quantiteStock; 
+    }
 
     public void mettreAJourStock(int delta) {
         this.quantiteStock += delta;
@@ -29,9 +37,13 @@ public class Ingredient implements Subject {
     }
 
     @Override
-    public void attach(Observer o) { observers.add(o); }
+    public void attach(Observer o) { 
+    	observers.add(o); 
+    }
     @Override
-    public void detach(Observer o) { observers.remove(o); }
+    public void detach(Observer o) { 
+    	observers.remove(o); 
+    }
     @Override
     public void notifyObservers(String message) {
         for (Observer o : observers) o.notifier(message);

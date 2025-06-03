@@ -1,0 +1,46 @@
+-- Table Restaurant 
+CREATE TABLE IF NOT EXISTS restaurant (
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL
+);
+
+Table TableRestaurant
+CREATE TABLE IF NOT EXISTS table_restaurant (
+    numero   INTEGER PRIMARY KEY,
+    capacite INTEGER NOT NULL,
+    etat     VARCHAR(10) NOT NULL DEFAULT 'libre'
+);
+
+-- Table Personnel
+CREATE TABLE IF NOT EXISTS personnel (
+    id   SERIAL PRIMARY KEY,
+    nom  VARCHAR(100) NOT NULL,
+    role VARCHAR(20) NOT NULL
+);
+
+-- Table Reservation
+CREATE TABLE IF NOT EXISTS reservation (
+    id                SERIAL PRIMARY KEY,
+    client_nom        VARCHAR(100) NOT NULL,
+    date_heure        TIMESTAMP NOT NULL,
+    nombre_personnes  INTEGER NOT NULL,
+    table_numero      INTEGER,
+    FOREIGN KEY (table_numero) REFERENCES tab
+    
+    -- Table Commande
+CREATE TABLE IF NOT EXISTS commande (
+    id            SERIAL PRIMARY KEY,
+    date_commande TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    etat          VARCHAR(20) NOT NULL
+);
+
+-- Table Facture
+CREATE TABLE IF NOT EXISTS facture (
+    id            SERIAL PRIMARY KEY,
+    commande_id   INTEGER UNIQUE NOT NULL,
+    montant_total NUMERIC(10,2) NOT NULL,
+    statut_paiement VARCHAR(20)  NOT NULL DEFAULT 'en_attente',
+    FOREIGN KEY (commande_id) REFERENCES commande(id)
+);
+
+    

@@ -11,7 +11,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/HP/Documents/ANNEE 2024-2025/ANNEE Ii1/SEMESTRE 2/Projet Pro/Restaurant/lib/postgresql-42.7.6.jar">
+	<classpathentry kind="lib" path="C:/Users/youms/Downloads/postgresql-42.7.6.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

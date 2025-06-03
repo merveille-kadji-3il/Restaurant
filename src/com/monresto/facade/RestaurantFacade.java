@@ -41,15 +41,20 @@ public class RestaurantFacade {
             System.out.print("Choix: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
-                case 1: menuManagement(); break;
-                case 2: reservationManagement(); break;
-                case 3: commandeManagement(); break;
-                case 4: rapportManagement(); break;
-                case 5: exit = true; break;
+                case 1: menuManagement(); 
+                	break;
+                case 2: reservationManagement(); 
+                	break;
+                case 3: commandeManagement(); 
+                	break;
+                case 4: rapportManagement(); 
+                	break;
+                case 5: exit = true; 
+                	break;
                 default: System.out.println("Choix invalide.");
             }
         }
-        System.out.println("Au revoir !");
+        System.out.println("Merci pour votre visite !");
     }
 
     private void menuManagement() {
@@ -86,7 +91,7 @@ public class RestaurantFacade {
                     System.out.println("Option invalide.");
             }
         } catch (Exception e) {
-            System.err.println("Erreur Gestion Menu: " + e.getMessage());
+            System.out.println("Erreur Gestion Menu: " + e.getMessage());
         }
     }
 
@@ -132,7 +137,7 @@ public class RestaurantFacade {
                     System.out.println("Option invalide.");
             }
         } catch (Exception e) {
-            System.err.println("Erreur Réservation: " + e.getMessage());
+            System.out.println("Erreur Réservation: " + e.getMessage());
         }
     }
 
@@ -142,7 +147,7 @@ public class RestaurantFacade {
             Commande cmd = new Commande(0);
             boolean adding = true;
             while (adding) {
-                System.out.print("ID MenuItem à ajouter (0 pour terminer): ");
+                System.out.print("ID MenuItem à ajouter (tapez 0 pour terminer): ");
                 int mid = Integer.parseInt(scanner.nextLine());
                 if (mid == 0) adding = false;
                 else cmd.getContent().add(menuService.findById(mid));
@@ -162,7 +167,7 @@ public class RestaurantFacade {
             Rapport r = FactoryRapport.creerRapport(type);
             r.genererRapportVentes();
         } catch (Exception e) {
-            System.err.println("Erreur Rapport: " + e.getMessage());
+            System.out.println("Erreur Rapport: " + e.getMessage());
         }
     }
 }
